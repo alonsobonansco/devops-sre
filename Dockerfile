@@ -10,7 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py profile.json ./
 COPY templates/ ./templates/
-COPY static/ ./static/
 
 RUN useradd --uid 10001 --create-home --shell /usr/sbin/nologin webapp \
     && chown -R webapp:webapp /app
