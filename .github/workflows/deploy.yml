@@ -22,8 +22,9 @@ jobs:
           host: ${{secrets.IP_PUBLICA}}
           username: ${{secrets.USERNAME}}
           key: ${{secrets.KEY}}
-          source: "."
+          source: "Dockerfile,compose.yaml,app.py,profile.json,requirements.txt,templates/"
           target: "/home/${{secrets.USERNAME}}/proyecto1"
+          rm: true
           overwrite: true
 
       - name: levantar contenedor
@@ -36,4 +37,3 @@ jobs:
             cd /home/${{secrets.USERNAME}}/proyecto1
             docker compose down
             docker compose up -d --build
-
