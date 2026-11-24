@@ -35,5 +35,5 @@ jobs:
           script: |
             cd /home/${{secrets.USERNAME}}/proyecto1
             docker compose down
-            docker-compose up -d --build
+            docker compose up -d --build
 
